@@ -4,19 +4,23 @@ let operant = 0
 let resultA = 0
 let resultB = 0
 function plus(a,b) {
-    result = parseInt(a) + parseInt(b)
+    result = parseFloat(a) + parseFloat(b)
     return result
 }
 function minus(a,b) {
-    result = parseInt(a) - parseInt(b)
+    result = parseFloat(a) - parseFloat(b)
     return result
 }
 function divide(a,b) {
-    result = parseInt(a) / parseInt(b)
-    return result.toFixed(3)
+    result = parseFloat(a) / parseFloat(b)
+    if (a%b == 0) {
+        return result
+    }else {
+        return result.toFixed(3)
+    }
 }
 function multiply(a,b) {
-    result = parseInt(a) * parseInt(b)
+    result = parseFloat(a) * parseFloat(b)
     return result
 }
 function enter(a,b,c){
@@ -60,7 +64,6 @@ for (x = 0; x <= btnNumbers.length; x++) {
             resultA = " "
         }
         calcInput.textContent = "0"
-        console.log(resultant)
         resultant = 0
         resultA = resultA + this.id
         calcInput.textContent = `${resultA}`
@@ -107,7 +110,8 @@ for (x = 0; x <= btnNumbers.length; x++) {
         btnEnter.onclick = function() {
             if (resultB !== 0) {
                 resultant = enter(resultB, resultA, operant)
-                calcInput.textContent = resultant
+                calcInput.textContent = `${resultant}`
+                console.log(resultant)
                 resultA = " "
                 resultB = " "
             }
