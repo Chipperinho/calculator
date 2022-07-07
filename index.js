@@ -60,6 +60,8 @@ for (x = 0; x <= btnNumbers.length; x++) {
             resultA = " "
         }
         calcInput.textContent = "0"
+        console.log(resultant)
+        resultant = 0
         resultA = resultA + this.id
         calcInput.textContent = `${resultA}`
         btnPlus.onclick = function() {
